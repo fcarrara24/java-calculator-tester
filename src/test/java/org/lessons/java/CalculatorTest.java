@@ -19,6 +19,7 @@ class CalculatorTest {
     @Test
     void divide() {
         assertEquals(2.0f, Calculator.divide(6.0f, 3.0f), 0.001);
+        assertThrows(IllegalArgumentException.class, ()->Calculator.divide(10,0));
     }
 
     @Test

@@ -44,4 +44,20 @@ class BigliettoTrenoTest {
 
         assertEquals(expectedPrezzo, actualPrezzo);
     }
+
+    @Test
+    public void TestEccezioneEta(){
+        int eta = -1;
+        int km = 30;
+
+        assertThrows(IllegalArgumentException.class, ()->BigliettoTreno.calcolaPrezzo(eta, km));
+    }
+
+    @Test
+    public void TestEccezioneKm(){
+        int eta = 1;
+        int km = -30;
+
+        assertThrows(IllegalArgumentException.class, ()->BigliettoTreno.calcolaPrezzo(eta, km));
+    }
 }
